@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="UTF-8">
+<link rel="icon" href="/favicon.ico">
+<title>中文标题</title>
+<!-- 外部CSS样式代码starting -->
+<link rel="stylesheet" href="/css/base.css">
+
+<body>
+    <div id="header" class="title bold">
+        <span><a href="/user/register.html">注册账号</a></span>
+        <span>已有账号?
+            <a href="/user/login.html">登录</a>
+        </span>
+        abc
+    </div>
+    <div id='main'>
+        <a href='#' onclick="test()">測試</a>
+        <a id="link" href="http://baidu.com">測試</a>
+        <hr>
+        <div id="log"></div>
+    </div>
+    <div id='footer'></div>
+</body>
+<!-- 引入外部JS代码 -->
+<script src="/js/librt.js"></script>
+<script>
+    function test() {
+        var a = document.getElementById('link')
+        a.onclick = function () {
+            log('拦截组件默认行为')
+            return false;
+        }
+    }
+</script>
+
+</html>

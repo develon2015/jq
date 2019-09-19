@@ -1,0 +1,43 @@
+* {
+    /* 微软正黑 */
+    font-family: 'Microsoft JhengHei';
+}
+
+body {
+    width: auto;
+    /* max-width: 100%; */
+    padding: 0;
+    margin: 0 0 0 0; /* Top right bottom left*/
+}
+
+div {
+    margin: 0;
+    padding: 0;
+}
+
+.bold {
+    /* 粗体 */
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.title {
+    background-color: #00bf00;
+    padding: 2%;
+    font-size: 130%;
+}
+
+#header {
+    min-height: 20px;
+}
+
+#footer {
+    margin: 0;
+    padding: 2px 0;
+    background-color: #666666c5;
+    font-size: 100%;
+    text-align: center;
+}
