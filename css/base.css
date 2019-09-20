@@ -1,17 +1,17 @@
 * {
     /* 微软正黑 */
-    font-family: 'Microsoft JhengHei';
+    font-family: 'Microsoft JhengHei', '宋体';
 }
 
 body {
     width: auto;
-    /* max-width: 100%; */
+    max-width: 100%;
     padding: 0;
     margin: 0 0 0 0; /* Top right bottom left*/
 }
 
 div {
-    margin: 0;
+    margin: 0 0;
     padding: 0;
 }
 
@@ -32,12 +32,23 @@ div {
 
 #header {
     min-height: 20px;
+    overflow: auto;
 }
 
-#footer {
+#divFooter {
     margin: 0;
     padding: 2px 0;
     background-color: #666666c5;
     font-size: 100%;
     text-align: center;
+}
+
+a.button {
+    background: #00c000;
+    padding: 9px 10px;
+    margin: 2px;
+    border: none;
+    text-decoration: none;
+    color: #000000;
+    min-width: 200px;
 }

@@ -20,11 +20,23 @@ function log(obj) {
     }
 }
 
+// 构建主体(divMain)和足体(divFooter)上下布局
+function createDivMain() {
+    var divMain = document.createElement('div')
+    divMain.id = 'divMain'
+    divMain.innerHTML = document.body.innerHTML
+    document.body.innerHTML = ''
+    document.body.appendChild(divMain)
+    var divFooter = document.createElement('div')
+    divFooter.id = 'divFooter'
+    document.body.appendChild(divFooter)
+}
+
 // 构建footer, 前提是保持 header main footer 的布局
 // 当 main 高度改变时, 需要调用一下以刷新
 function createFooter() {
-    var footer = document.getElementById('footer')
-    var main = document.getElementById('main')
+    var footer = document.getElementById('divFooter')
+    var main = document.getElementById('divMain')
     if (footer == null || main == null) {
         return
     }
@@ -32,7 +44,7 @@ function createFooter() {
     var n = window.innerHeight - main.clientHeight - footer.clientHeight - main.offsetTop
     // log('n=' + n +', 浏览器高' + innerHeight + ', main高' + main.clientHeight + ', footer高' + footer.clientHeight)
     if (n > 0) {
-        footer.style.marginTop = (n + 2) + 'px'
+        footer.style.marginTop = (n - 0) + 'px'
         // log('令为' + footer.style.marginTop)
     } else {
         footer.style.marginTop = '0px'
@@ -55,15 +67,13 @@ function init() {
     icon.setAttribute('href', '/favicon.ico')
     document.head.appendChild(icon)
 
-    // <link rel="stylesheet" href="/css/base.css">
-    // var basecss = document.createElement('link')
-    // basecss.setAttribute('rel', 'stylesheet')
-    // basecss.setAttribute('href', '/css/base.css')
-    // document.head.appendChild(basecss)
-
+    // 设置footer之前, 设置divMain
+    createDivMain()
     // 设置footer
     createFooter()
 }
 
-// 执行初始化任务
-init()
+// 添加事件, 执行初始化任务
+window.addEventListener('load', function () {
+    init()
+})
